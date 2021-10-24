@@ -12,7 +12,6 @@ function TodoList() {
                     {
                         id: nanoid(),
                         name: action.name,
-                        category: action.category,
                     },
                 ];
             default:
@@ -25,7 +24,6 @@ function TodoList() {
         dispatch({
             type: "add",
             name: inputRef.current.value,
-            category: inputRef.current.value,
         });
         inputRef.current.value = "";
     }
