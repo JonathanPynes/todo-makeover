@@ -8,6 +8,10 @@ import CheckedIcon from "./icons/check.svg";
 import TrashIcon from "./icons/delete_outline.svg";
 import ProfileImg from "./img/profile.jpg";
 import SpreadIcon from "./icons/spread.svg";
+import BlueCircle from "./icons/blueCircle.svg";
+import GreenCircle from "./icons/greenCircle.svg";
+import RedCircle from "./icons/redCircle.svg";
+import COLORS from "./Colors";
 import styled from "styled-components";
 
 function App() {
@@ -36,7 +40,7 @@ function App() {
                                 <img src={TrashIcon} alt="delete" />
                             </IconButton>
 
-                            {/* Probably a better way to do the last bit below, would love a tip for the css below... I thought padding-top: auto would work but no? */}
+                            {/* Probably a better way to do the last bit below, would love a css tip... I thought padding-top: auto; would work - but no? */}
 
                             <ProfileButton>
                                 <ProfileImgCSS src={ProfileImg} alt="profile" />
@@ -46,8 +50,52 @@ function App() {
                             </SpreadIconButton>
                         </IconsFarLeftBarCSS>
                     </FarLeftBarCSS>
-                    <LeftBarCSS></LeftBarCSS>
-                    <RightBoxCSS></RightBoxCSS>
+
+                    <LeftBarCSS>
+                        <div>
+                            <ProjectsH4>
+                                <BlueCircleCSS src={BlueCircle} />
+                                Projects
+                            </ProjectsH4>
+                            <FarLeftUl>
+                                <FarLeftLi>v</FarLeftLi>
+                                <FarLeftLi>v</FarLeftLi>
+                                <FarLeftLi>v</FarLeftLi>
+                            </FarLeftUl>
+                        </div>
+                        <div>
+                            <PersonalH4>
+                                <GreenCircleCSS src={GreenCircle} />
+                                Personal
+                            </PersonalH4>
+                            <FarLeftUl>
+                                <FarLeftLi>v</FarLeftLi>
+                                <FarLeftLi>v</FarLeftLi>
+                                <FarLeftLi>v</FarLeftLi>
+                            </FarLeftUl>
+                        </div>
+                        <div>
+                            <LearningH4>
+                                <RedCircleCSS src={RedCircle} />
+                                Learning
+                            </LearningH4>
+                            <FarLeftUl>
+                                <FarLeftLi>v</FarLeftLi>
+                                <FarLeftLi>v</FarLeftLi>
+                                <FarLeftLi>v</FarLeftLi>
+                            </FarLeftUl>
+                        </div>
+                        <Test1>
+                            <Test2></Test2>
+                        </Test1>
+                    </LeftBarCSS>
+                    <RightBoxCSS>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </RightBoxCSS>
                 </MainDivCSS>
             </BodyCSS>
         </>
@@ -55,7 +103,8 @@ function App() {
 }
 
 export default App;
-
+const Test1 = styled.div``;
+const Test2 = styled.button``;
 const BodyCSS = styled.div`
     position: absolute;
     left: 50%;
@@ -73,6 +122,8 @@ const MainDivCSS = styled.div`
     box-shadow: 0px 8px 18px 0px rgba(0, 0, 0, 0.32);
 `;
 
+// -----------ToolBar Start-----------
+
 const FarLeftBarCSS = styled.div`
     display: flex;
     flex-direction: column;
@@ -80,7 +131,7 @@ const FarLeftBarCSS = styled.div`
     left: 0;
     width: 5vw;
     height: 100%;
-    background: rgb(26, 140, 255);
+    background: #1a8cff;
     border-radius: 2rem 0 0 2rem;
     display: flex;
     flex-direction: column;
@@ -117,16 +168,52 @@ const SpreadIconButton = styled.button`
     background: none;
 `;
 
+// ----------ToolBar End----------
+
+// ---------LeftBar Start--------
+
 const LeftBarCSS = styled.div`
+    display: flex;
+    flex-direction: column;
     position: absolute;
     left: 5vw;
     width: 10vw;
     height: 100%;
+    padding: 1rem;
     border-right-style: solid;
     border-width: 0.1rem;
     border-color: lightgray;
 `;
 
+const ProjectsH4 = styled.h4`
+    color: ${COLORS.blue};
+    margin: 7rem 0 0 0;
+`;
+const PersonalH4 = styled.h4`
+    color: ${COLORS.green};
+    margin: 4rem 0 0 0;
+`;
+const LearningH4 = styled.h4`
+    color: ${COLORS.red};
+    margin: 4rem 0 0 0;
+`;
+const BlueCircleCSS = styled.img`
+    margin-right: 1rem;
+`;
+const GreenCircleCSS = styled.img`
+    margin-right: 1rem;
+`;
+const RedCircleCSS = styled.img`
+    margin-right: 1rem;
+`;
+const FarLeftUl = styled.ul`
+    padding-left: 2rem;
+    margin: 0;
+`;
+const FarLeftLi = styled.li`
+    list-style-type: none;
+    padding-top: 1rem;
+`;
 const RightBoxCSS = styled.div`
     display: flex;
     flex-direction: column;
