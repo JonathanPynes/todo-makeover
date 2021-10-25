@@ -1,44 +1,39 @@
-import React, { useReducer, useRef } from "react";
+import React, { useState } from "react";
 import { nanoid } from "nanoid";
 import styled from "styled-components";
 
 function TodoList() {
-    const inputRef = useRef();
-    const [items, dispatch] = useReducer((state, action) => {
-        switch (action.type) {
-            case "add":
-                return [
-                    ...state,
-                    {
-                        id: nanoid(),
-                        name: action.name,
-                    },
-                ];
-            default:
-                return state;
-        }
-    }, []);
+    const [todo, setTodo] = useState([]);
+    const [todoName, setTodoName] = useState("");
 
-    function handleSubmit(e) {
+    //function handleSubmit(e) ? which is better to use?
+    const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch({
-            type: "add",
-            name: inputRef.current.value,
-        });
-        inputRef.current.value = "";
-    }
+        setTodo([
+            ...todo,
+            {
+                id: nanoid(),
+                name: todoName,
+            },
+        ]);
+        setTodoName("");
+    };
 
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <input ref={inputRef} />
+                <label>
+                    <input
+                        name="item" //what is this? why does the input need a name?
+                        type="text"
+                        value={todoName}
+                        onChange={(e) => setTodoName(e.target.value)}
+                    />
+                </label>
             </form>
             <ul>
-                {items.map((item, index) => (
-                    <li key={item.id}>
-                        {item.name}
-                        {item.category}
-                    </li>
+                {todo.map((item) => (
+                    <li key={item.id}>{item.name}</li>
                 ))}
             </ul>
         </>
