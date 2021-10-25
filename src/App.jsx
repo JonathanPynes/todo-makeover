@@ -6,27 +6,27 @@ import styled from "styled-components";
 function App() {
     return (
         <>
-            <Body>
-                <MainDiv>
-                    <FarLeftBar></FarLeftBar>
-                    <LeftBar></LeftBar>
-                    <RightBox></RightBox>
-                </MainDiv>
-            </Body>
+            <BodyCSS>
+                <MainDivCSS>
+                    <FarLeftBarCSS></FarLeftBarCSS>
+                    <LeftBarCSS></LeftBarCSS>
+                    <RightBoxCSS></RightBoxCSS>
+                </MainDivCSS>
+            </BodyCSS>
         </>
     );
 }
 
 export default App;
 
-const Body = styled.div`
+const BodyCSS = styled.div`
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 `;
 
-const MainDiv = styled.div`
+const MainDivCSS = styled.div`
     width: 90vw;
     height: 90vh;
     margin: auto;
@@ -36,7 +36,7 @@ const MainDiv = styled.div`
     box-shadow: 0px 8px 18px 0px rgba(0, 0, 0, 0.32);
 `;
 
-const FarLeftBar = styled.div`
+const FarLeftBarCSS = styled.div`
     position: absolute;
     left: 0;
     width: 5vw;
@@ -47,7 +47,7 @@ const FarLeftBar = styled.div`
     flex-direction: column;
 `;
 
-const LeftBar = styled.div`
+const LeftBarCSS = styled.div`
     position: absolute;
     left: 5vw;
     width: 10vw;
@@ -57,7 +57,7 @@ const LeftBar = styled.div`
     border-color: lightgray;
 `;
 
-const RightBox = styled.div`
+const RightBoxCSS = styled.div`
     display: flex;
     position: absolute;
     left: 15vw;
