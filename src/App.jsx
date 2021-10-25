@@ -8,7 +8,16 @@ function App() {
         <>
             <BodyCSS>
                 <MainDivCSS>
-                    <FarLeftBarCSS></FarLeftBarCSS>
+                    <FarLeftBarCSS>
+                        <TopULFarLeftBarCSS>
+                            <button>Home</button>
+                            <button>Inbox</button>
+                            <button>Star</button>
+                            <button>Calendar</button>
+                            <button>Check</button>
+                            <button>Trash</button>
+                        </TopULFarLeftBarCSS>
+                    </FarLeftBarCSS>
                     <LeftBarCSS></LeftBarCSS>
                     <RightBoxCSS></RightBoxCSS>
                 </MainDivCSS>
@@ -37,6 +46,8 @@ const MainDivCSS = styled.div`
 `;
 
 const FarLeftBarCSS = styled.div`
+    display: flex;
+    flex-direction: column;
     position: absolute;
     left: 0;
     width: 5vw;
@@ -46,6 +57,8 @@ const FarLeftBarCSS = styled.div`
     display: flex;
     flex-direction: column;
 `;
+
+const TopULFarLeftBarCSS = styled.ul``;
 
 const LeftBarCSS = styled.div`
     position: absolute;
@@ -59,6 +72,7 @@ const LeftBarCSS = styled.div`
 
 const RightBoxCSS = styled.div`
     display: flex;
+    flex-direction: column;
     position: absolute;
     left: 15vw;
     width: 75vw;
