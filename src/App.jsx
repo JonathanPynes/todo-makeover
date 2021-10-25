@@ -13,6 +13,7 @@ import GreenCircle from "./icons/greenCircle.svg";
 import RedCircle from "./icons/redCircle.svg";
 import COLORS from "./Colors";
 import styled from "styled-components";
+import PlusButton from "./icons/plusButton.svg";
 
 function App() {
     return (
@@ -85,9 +86,11 @@ function App() {
                                 <FarLeftLi>v</FarLeftLi>
                             </FarLeftUl>
                         </div>
-                        <Test1>
-                            <Test2></Test2>
-                        </Test1>
+                        <PlusButtonContainer>
+                            <PlusButtonCSS>
+                                <img src={PlusButton} alt="add" />
+                            </PlusButtonCSS>
+                        </PlusButtonContainer>
                     </LeftBarCSS>
                     <RightBoxCSS>
                         <div></div>
@@ -103,8 +106,7 @@ function App() {
 }
 
 export default App;
-const Test1 = styled.div``;
-const Test2 = styled.button``;
+
 const BodyCSS = styled.div`
     position: absolute;
     left: 50%;
@@ -214,6 +216,18 @@ const FarLeftLi = styled.li`
     list-style-type: none;
     padding-top: 1rem;
 `;
+const PlusButtonContainer = styled.div`
+display: flex;
+height: 6rem
+align-items: center;
+flex-direction: column;
+justify-content: flex-end
+`;
+const PlusButtonContainer = styled.button`
+    border: none;
+    background: none;
+`;
+
 const RightBoxCSS = styled.div`
     display: flex;
     flex-direction: column;
