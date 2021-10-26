@@ -14,7 +14,14 @@ import RedCircle from "./icons/redCircle.svg";
 import COLORS from "./Colors";
 import styled from "styled-components";
 import PlusButton from "./icons/plusButton.png";
-import SpreadIconGray from "./icons/spreadgray.svg";
+import SpreadIconGray from "./icons/spreadGray.svg";
+import GreenCheckCircle from "./icons/greenCheckCircle.svg";
+import RedXCircle from "./icons/redXCircle.svg";
+import PurpleCalendarCircle from "./icons/purpleCalendarCircle.svg";
+import GreenLabelCircle from "./icons/greenLabelCircle.svg";
+import PurpleSearchCircle from "./icons/purpleSearchCircle.svg";
+import OrangePlusCircle from "./icons/orangePlusCircle.svg";
+import BluePlusCircle from "./icons/bluePlusCircle.svg";
 
 function App() {
     return (
@@ -235,11 +242,42 @@ function App() {
                                         Modals
                                     </Right4thAnd5thLiLabel>
                                 </Right4thAnd5thLi>
+                                <Right4thAnd5thLi>
+                                    <AddItemButton>
+                                        +
+                                        <AddItemButtonSpan>
+                                            Add item
+                                        </AddItemButtonSpan>
+                                    </AddItemButton>
+                                </Right4thAnd5thLi>
                             </Right4thAnd5thUl>
                         </Right4thAnd5thUlContainer>
                         <BottomToolBarContainer>
-                            <BottomToolBarLeft></BottomToolBarLeft>
-                            <BottomToolBarRight></BottomToolBarRight>
+                            <BottomToolBarLeft>
+                                <BottomToolBarButtonLeft>
+                                    <img src={GreenCheckCircle} alt="" />
+                                </BottomToolBarButtonLeft>
+                                <BottomToolBarButtonLeft>
+                                    <img src={RedXCircle} alt="" />
+                                </BottomToolBarButtonLeft>
+                                <BottomToolBarButtonLeft>
+                                    <img src={PurpleCalendarCircle} alt="" />
+                                </BottomToolBarButtonLeft>
+                                <BottomToolBarButtonLeft>
+                                    <img src={GreenLabelCircle} alt="" />
+                                </BottomToolBarButtonLeft>
+                                <BottomToolBarButtonLeft>
+                                    <img src={PurpleSearchCircle} alt="" />
+                                </BottomToolBarButtonLeft>
+                                <BottomToolBarButtonLeft>
+                                    <img src={OrangePlusCircle} alt="" />
+                                </BottomToolBarButtonLeft>
+                            </BottomToolBarLeft>
+                            <BottomToolBarRight>
+                                <BottomToolBarButtonRight>
+                                    <img src={BluePlusCircle} alt="" />
+                                </BottomToolBarButtonRight>
+                            </BottomToolBarRight>
                         </BottomToolBarContainer>
                     </RightBoxCSS>
                 </MainDivCSS>
@@ -486,7 +524,7 @@ const TopRight2ndTabsButton = styled.span`
     border-style: none;
     background-color: lightgray;
     color: ${COLORS.blue};
-    font-size: small;
+    font-size: 9px;
     width: 1rem;
     height: 1rem;
 `;
@@ -563,20 +601,47 @@ const Right4thAnd5thLiLabel = styled.span`
     font-size: small;
     width: 100%;
 `;
+const AddItemButton = styled.button`
+    display: flex;
+    align-items: center;
+    background: none;
+    padding: 0 6px 0 4.5px;
+    border: none;
+    font-size: large;
+    width: auto;
+    color: ${COLORS.blue};
+`;
+const AddItemButtonSpan = styled.span`
+    font-size: 0.7rem;
+    padding-left: 3px;
+    color: ${COLORS.blue};
+`;
 const BottomToolBarContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
+    height: 100%;
+    margin-bottom: 30px;
 `;
 const BottomToolBarLeft = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding-left: 2rem;
+`;
+const BottomToolBarButtonLeft = styled.button`
+    background: none;
+    border: none;
 `;
 const BottomToolBarRight = styled.div`
     display: flex;
     flex-direction: row;
     margin-right: 3rem;
     justify-content: center;
+`;
+
+const BottomToolBarButtonRight = styled.button`
+    background: none;
+    border: none;
 `;
