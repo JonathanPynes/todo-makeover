@@ -13,7 +13,7 @@ import GreenCircle from "./icons/greenCircle.svg";
 import RedCircle from "./icons/redCircle.svg";
 import COLORS from "./Colors";
 import styled from "styled-components";
-import PlusButton from "./icons/plusButton.svg";
+import PlusButton from "./icons/plusButton.png";
 
 function App() {
     return (
@@ -22,33 +22,38 @@ function App() {
                 <MainDivCSS>
                     <FarLeftBarCSS>
                         <IconsFarLeftBarCSS>
-                            <IconButton onClick={console.log("clicked")}>
-                                <img src={LogoIcon} alt="home" />
-                            </IconButton>
-                            <IconButton>
-                                <img src={InboxIcon} alt="inbox" />
-                            </IconButton>
-                            <IconButton>
-                                <img src={StarIcon} alt="star" />
-                            </IconButton>
-                            <IconButton>
-                                <img src={CalendarIcon} alt="calendar" />
-                            </IconButton>
-                            <IconButton>
-                                <img src={CheckedIcon} alt="check" />
-                            </IconButton>
-                            <IconButton>
-                                <img src={TrashIcon} alt="delete" />
-                            </IconButton>
-
+                            <div>
+                                <IconButton onClick={console.log("clicked")}>
+                                    <img src={LogoIcon} alt="home" />
+                                </IconButton>
+                                <IconButton>
+                                    <img src={InboxIcon} alt="inbox" />
+                                </IconButton>
+                                <IconButton>
+                                    <img src={StarIcon} alt="star" />
+                                </IconButton>
+                                <IconButton>
+                                    <img src={CalendarIcon} alt="calendar" />
+                                </IconButton>
+                                <IconButton>
+                                    <img src={CheckedIcon} alt="check" />
+                                </IconButton>
+                                <IconButton>
+                                    <img src={TrashIcon} alt="delete" />
+                                </IconButton>
+                            </div>
                             {/* Probably a better way to do the last bit below, would love a css tip... I thought padding-top: auto; would work - but no? */}
-
-                            <ProfileButton>
-                                <ProfileImgCSS src={ProfileImg} alt="profile" />
-                            </ProfileButton>
-                            <SpreadIconButton>
-                                <img src={SpreadIcon} alt="menu" />
-                            </SpreadIconButton>
+                            <div>
+                                <ProfileButton>
+                                    <ProfileImgCSS
+                                        src={ProfileImg}
+                                        alt="profile"
+                                    />
+                                </ProfileButton>
+                                <SpreadIconButton>
+                                    <img src={SpreadIcon} alt="menu" />
+                                </SpreadIconButton>
+                            </div>
                         </IconsFarLeftBarCSS>
                     </FarLeftBarCSS>
 
@@ -93,7 +98,9 @@ function App() {
                         </PlusButtonContainer>
                     </LeftBarCSS>
                     <RightBoxCSS>
-                        <div></div>
+                        <div>
+                            <h1>Design</h1>
+                        </div>
                         <div></div>
                         <div></div>
                         <div></div>
@@ -142,8 +149,10 @@ const FarLeftBarCSS = styled.div`
 const IconsFarLeftBarCSS = styled.ul`
     display: flex;
     flex-direction: column;
+    height: 100%;
     margin: 0;
     padding: 0;
+    justify-content: space-between;
 `;
 
 const IconButton = styled.button`
@@ -179,9 +188,8 @@ const LeftBarCSS = styled.div`
     flex-direction: column;
     position: absolute;
     left: 5vw;
-    width: 10vw;
+    width: 15vw;
     height: 100%;
-    padding: 1rem;
     border-right-style: solid;
     border-width: 0.1rem;
     border-color: lightgray;
@@ -190,14 +198,17 @@ const LeftBarCSS = styled.div`
 const ProjectsH4 = styled.h4`
     color: ${COLORS.blue};
     margin: 7rem 0 0 0;
+    padding-left: 2rem;
 `;
 const PersonalH4 = styled.h4`
     color: ${COLORS.green};
     margin: 4rem 0 0 0;
+    padding-left: 2rem;
 `;
 const LearningH4 = styled.h4`
     color: ${COLORS.red};
     margin: 4rem 0 0 0;
+    padding-left: 2rem;
 `;
 const BlueCircleCSS = styled.img`
     margin-right: 1rem;
@@ -217,13 +228,13 @@ const FarLeftLi = styled.li`
     padding-top: 1rem;
 `;
 const PlusButtonContainer = styled.div`
-display: flex;
-height: 6rem
-align-items: center;
-flex-direction: column;
-justify-content: flex-end
+    display: flex;
+    height: 6.5rem;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
 `;
-const PlusButtonContainer = styled.button`
+const PlusButtonCSS = styled.button`
     border: none;
     background: none;
 `;
@@ -232,8 +243,8 @@ const RightBoxCSS = styled.div`
     display: flex;
     flex-direction: column;
     position: absolute;
-    left: 15vw;
-    width: 75vw;
+    left: 20vw;
+    width: 70vw;
     height: 100%;
     border-radius: 0 2rem 2rem 0;
     border-style: none;
