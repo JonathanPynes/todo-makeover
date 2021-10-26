@@ -100,11 +100,57 @@ function App() {
                         </PlusButtonContainer>
                     </LeftBarCSS>
                     <RightBoxCSS>
-                        <div>
-                            <h1>Design</h1>
-                        </div>
-                        <div></div>
-                        <div></div>
+                        <TopRightSpanContainer>
+                            <TopRightSpan>
+                                <TopRightSpanColor>EverDo - </TopRightSpanColor>
+                                MVP
+                            </TopRightSpan>
+                        </TopRightSpanContainer>
+                        <TopRightBoxContainer>
+                            <TopRightH1Container>
+                                <h1>Design</h1>
+                            </TopRightH1Container>
+                            <TopRightMenuContainer>
+                                <TopRightMenuButtons>All</TopRightMenuButtons>
+                                <TopRightMenuButtons>1h</TopRightMenuButtons>
+                                <TopRightMenuButtons>2h</TopRightMenuButtons>
+                                <TopRightMenuButtons>Work</TopRightMenuButtons>
+                            </TopRightMenuContainer>
+                        </TopRightBoxContainer>
+                        <TopRight2ndContainer>
+                            <TopRight2ndTabsContainer>
+                                <TopRight2ndTabs>
+                                    <TopRight2ndTabsButton>
+                                        10
+                                    </TopRight2ndTabsButton>
+                                    Todos
+                                </TopRight2ndTabs>
+                                <TopRight2ndTabs>
+                                    <TopRight2ndTabsButton>
+                                        5
+                                    </TopRight2ndTabsButton>
+                                    Notes
+                                </TopRight2ndTabs>
+                                <TopRight2ndTabs>
+                                    <TopRight2ndTabsButton></TopRight2ndTabsButton>
+                                    Links
+                                </TopRight2ndTabs>
+                                <TopRight2ndTabs>
+                                    <TopRight2ndTabsButton></TopRight2ndTabsButton>
+                                    Files
+                                </TopRight2ndTabs>
+                            </TopRight2ndTabsContainer>
+                        </TopRight2ndContainer>
+                        <TopRight3rdContainer>
+                            <TopRight3rdUl>
+                                <TopRight3rdLi>
+                                    <input type="checkbox"></input>Project page
+                                </TopRight3rdLi>
+                                <TopRight3rdLi>
+                                    <input type="checkbox"></input>Today page
+                                </TopRight3rdLi>
+                            </TopRight3rdUl>
+                        </TopRight3rdContainer>
                         <div></div>
                         <div></div>
                     </RightBoxCSS>
@@ -133,7 +179,7 @@ const MainDivCSS = styled.div`
     box-shadow: 0px 8px 18px 0px rgba(0, 0, 0, 0.32);
 `;
 
-// -----------ToolBar Start-----------
+// -----------FarLeft Start-----------
 
 const FarLeftBarCSS = styled.div`
     display: flex;
@@ -192,7 +238,7 @@ const SpreadIconButton = styled.button`
     background: none;
 `;
 
-// ----------ToolBar End----------
+// ----------FarLeft End----------
 
 // ---------LeftBar Start--------
 
@@ -258,6 +304,10 @@ const PlusButtonCSS = styled.button`
     background: none;
 `;
 
+// ---------- LeftBar End ----------
+
+// ----------- RightBox Start ----------
+
 const RightBoxCSS = styled.div`
     display: flex;
     flex-direction: column;
@@ -267,4 +317,93 @@ const RightBoxCSS = styled.div`
     height: 100%;
     border-radius: 0 2rem 2rem 0;
     border-style: none;
+`;
+const TopRightSpanContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+`;
+const TopRightSpan = styled.span`
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+`;
+const TopRightSpanColor = styled.p`
+    color: ${COLORS.blue};
+    font-weight: bold;
+    margin-right: 0.3rem;
+`;
+const TopRightBoxContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+`;
+const TopRightH1Container = styled.div`
+    display: flex;
+    font-size: large;
+    padding-left: 2rem;
+`;
+const TopRightMenuContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin-right: 3rem;
+    justify-content: center;
+`;
+const TopRightMenuButtons = styled.button`
+    background: none;
+    border: none;
+`;
+const TopRight2ndContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+`;
+const TopRight2ndTabsContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+`;
+const TopRight2ndTabs = styled.button`
+    justify-content: space-between;
+    padding: 0;
+    display: flex;
+    margin-right: 2rem;
+    width: 5rem;
+    height: 2rem;
+    border-style: none;
+    background: none;
+    &:focus {
+        border-bottom: solid;
+        border-color: ${COLORS.blue};
+    }
+`;
+const TopRight2ndTabsButton = styled.span`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border-style: none;
+    background-color: lightgray;
+    color: ${COLORS.blue};
+    font-size: small;
+    width: 1rem;
+    height: 1rem;
+`;
+const TopRight3rdContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    height: 10rem;
+    border-top: solid;
+    border-color: lightgray;
+    border-width: 0.1rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+`;
+const TopRight3rdUl = styled.ul`
+    margin-left: 2rem;
+    padding: 0;
+`;
+const TopRight3rdLi = styled.li`
+    list-style-type: none;
+    margin: 0;
 `;
