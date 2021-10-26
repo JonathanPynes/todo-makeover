@@ -14,6 +14,7 @@ import RedCircle from "./icons/redCircle.svg";
 import COLORS from "./Colors";
 import styled from "styled-components";
 import PlusButton from "./icons/plusButton.png";
+import SpreadIconGray from "./icons/spreadgray.svg";
 
 function App() {
     return (
@@ -151,7 +152,16 @@ function App() {
                                 </TopRight3rdLi>
                             </TopRight3rdUl>
                         </TopRight3rdContainer>
-                        <div></div>
+                        <Right4thContainer>
+                            <RightTitleAndSpreadContainer>
+                                <Right4thTitleContainer>
+                                    <h4>Product Planning</h4>
+                                </Right4thTitleContainer>
+                                <Right4thSpread>
+                                    <img src={SpreadIconGray} alt="more" />
+                                </Right4thSpread>
+                            </RightTitleAndSpreadContainer>
+                        </Right4thContainer>
                         <div></div>
                     </RightBoxCSS>
                 </MainDivCSS>
@@ -353,6 +363,13 @@ const TopRightMenuContainer = styled.div`
 const TopRightMenuButtons = styled.button`
     background: none;
     border: none;
+    &: focus {
+        transition: 0.33s;
+        background: ${COLORS.blue};
+        border-radius: 50px;
+        width: inherit;
+        color: white;
+    }
 `;
 const TopRight2ndContainer = styled.div`
     display: flex;
@@ -368,12 +385,14 @@ const TopRight2ndTabs = styled.button`
     padding: 0;
     display: flex;
     margin-right: 2rem;
-    width: 5rem;
+    width: 4rem;
     height: 2rem;
     border-style: none;
     background: none;
     &:focus {
+        transition: 0.1s;
         border-bottom: solid;
+        border-width: 0.15rem;
         border-color: ${COLORS.blue};
     }
 `;
@@ -392,7 +411,7 @@ const TopRight2ndTabsButton = styled.span`
 const TopRight3rdContainer = styled.div`
     display: flex;
     flex-direction: column;
-    height: 10rem;
+    height: auto;
     border-top: solid;
     border-color: lightgray;
     border-width: 0.1rem;
@@ -407,3 +426,20 @@ const TopRight3rdLi = styled.li`
     list-style-type: none;
     margin: 0;
 `;
+const Right4thContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+const RightTitleAndSpreadContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 3rem;
+    margin-left: 2rem;
+    border-bottom: solid;
+    border-color: lightgray;
+    border-width: 0.1rem;
+`;
+const Right4thTitleContainer = styled.div``;
+const Right4thSpread = styled.div``;
