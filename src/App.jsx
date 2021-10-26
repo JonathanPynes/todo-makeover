@@ -215,7 +215,7 @@ const IconsBottomContainer = styled.div`
 `;
 
 const IconButton = styled.button`
-    padding: 3rem 0 0 0;
+    padding: 1.5rem 0 0 0;
     border: none;
     background: none;
 `;
