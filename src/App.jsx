@@ -66,9 +66,9 @@ function App() {
                                     Projects
                                 </ProjectsH4>
                                 <FarLeftUl>
-                                    <FarLeftLi>v</FarLeftLi>
-                                    <FarLeftLi>v</FarLeftLi>
-                                    <FarLeftLi>v</FarLeftLi>
+                                    <FarLeftLi>EverDo</FarLeftLi>
+                                    <FarLeftLi>Gemsmark</FarLeftLi>
+                                    <FarLeftLi>Rubicon</FarLeftLi>
                                 </FarLeftUl>
                             </div>
                             <div>
@@ -77,9 +77,9 @@ function App() {
                                     Personal
                                 </PersonalH4>
                                 <FarLeftUl>
-                                    <FarLeftLi>v</FarLeftLi>
-                                    <FarLeftLi>v</FarLeftLi>
-                                    <FarLeftLi>v</FarLeftLi>
+                                    <FarLeftLi>Shopping</FarLeftLi>
+                                    <FarLeftLi>Health</FarLeftLi>
+                                    <FarLeftLi>Entertainment</FarLeftLi>
                                 </FarLeftUl>
                             </div>
                             <div>
@@ -88,9 +88,8 @@ function App() {
                                     Learning
                                 </LearningH4>
                                 <FarLeftUl>
-                                    <FarLeftLi>v</FarLeftLi>
-                                    <FarLeftLi>v</FarLeftLi>
-                                    <FarLeftLi>v</FarLeftLi>
+                                    <FarLeftLi>Electron</FarLeftLi>
+                                    <FarLeftLi>Flexbox</FarLeftLi>
                                 </FarLeftUl>
                             </div>
                         </TopBarContainer>
@@ -109,7 +108,7 @@ function App() {
                         </TopRightSpanContainer>
                         <TopRightBoxContainer>
                             <TopRightH1Container>
-                                <h1>Design</h1>
+                                <TopRightH1>Design</TopRightH1>
                             </TopRightH1Container>
                             <TopRightMenuContainer>
                                 <TopRightMenuButtons>All</TopRightMenuButtons>
@@ -145,24 +144,103 @@ function App() {
                         <TopRight3rdContainer>
                             <TopRight3rdUl>
                                 <TopRight3rdLi>
-                                    <input type="checkbox"></input>Project page
+                                    <input type="checkbox"></input>
+                                    <Right4thAnd5thLiLabel>
+                                        Project page
+                                    </Right4thAnd5thLiLabel>
                                 </TopRight3rdLi>
                                 <TopRight3rdLi>
-                                    <input type="checkbox"></input>Today page
+                                    <input type="checkbox"></input>
+                                    <Right4thAnd5thLiLabel>
+                                        Today page
+                                    </Right4thAnd5thLiLabel>
                                 </TopRight3rdLi>
                             </TopRight3rdUl>
                         </TopRight3rdContainer>
-                        <Right4thContainer>
-                            <RightTitleAndSpreadContainer>
-                                <Right4thTitleContainer>
-                                    <h4>Product Planning</h4>
-                                </Right4thTitleContainer>
-                                <Right4thSpread>
+                        <Right4thAnd5thContainer>
+                            <Right4thAnd5thTitleAndSpreadContainer>
+                                <Right4thAnd5thTitleContainer>
+                                    <Right4thAnd5thTitle>
+                                        Product Planning
+                                    </Right4thAnd5thTitle>
+                                </Right4thAnd5thTitleContainer>
+                                <Right4thAnd5thSpread>
                                     <img src={SpreadIconGray} alt="more" />
-                                </Right4thSpread>
-                            </RightTitleAndSpreadContainer>
-                        </Right4thContainer>
-                        <div></div>
+                                </Right4thAnd5thSpread>
+                            </Right4thAnd5thTitleAndSpreadContainer>
+                        </Right4thAnd5thContainer>
+                        <Right4thAnd5thUlContainer>
+                            <Right4thAnd5thUl>
+                                <Right4thAnd5thLi>
+                                    <input type="checkbox"></input>
+                                    <Right4thAnd5thLiLabel>
+                                        Decide how to organize Today page
+                                    </Right4thAnd5thLiLabel>
+                                </Right4thAnd5thLi>
+                                <Right4thAnd5thLi>
+                                    <input type="checkbox"></input>
+                                    <Right4thAnd5thLiLabel>
+                                        Create wireFrames for the Today page
+                                    </Right4thAnd5thLiLabel>
+                                </Right4thAnd5thLi>
+                                <Right4thAnd5thLi>
+                                    <input type="checkbox"></input>
+                                    <Right4thAnd5thLiLabel>
+                                        Decide whether to group items by type
+                                    </Right4thAnd5thLiLabel>
+                                </Right4thAnd5thLi>
+                            </Right4thAnd5thUl>
+                        </Right4thAnd5thUlContainer>
+                        <Right4thAnd5thContainer>
+                            <Right4thAnd5thTitleAndSpreadContainer>
+                                <Right4thAnd5thTitleContainer>
+                                    <Right4thAnd5thTitle>
+                                        Design
+                                    </Right4thAnd5thTitle>
+                                </Right4thAnd5thTitleContainer>
+                                <Right4thAnd5thSpread>
+                                    <img src={SpreadIconGray} alt="more" />
+                                </Right4thAnd5thSpread>
+                            </Right4thAnd5thTitleAndSpreadContainer>
+                        </Right4thAnd5thContainer>
+                        <Right4thAnd5thUlContainer>
+                            <Right4thAnd5thUl>
+                                <Right4thAnd5thLi>
+                                    <input type="checkbox"></input>
+                                    <Right4thAnd5thLiLabel>
+                                        Project page
+                                    </Right4thAnd5thLiLabel>
+                                </Right4thAnd5thLi>
+                                <Right4thAnd5thLi>
+                                    <input type="checkbox"></input>
+                                    <Right4thAnd5thLiLabel>
+                                        Today page
+                                    </Right4thAnd5thLiLabel>
+                                </Right4thAnd5thLi>
+                                <Right4thAnd5thLi>
+                                    <input type="checkbox"></input>
+                                    <Right4thAnd5thLiLabel>
+                                        End of day page
+                                    </Right4thAnd5thLiLabel>
+                                </Right4thAnd5thLi>
+                                <Right4thAnd5thLi>
+                                    <input type="checkbox"></input>
+                                    <Right4thAnd5thLiLabel>
+                                        Notifications And Confirmations
+                                    </Right4thAnd5thLiLabel>
+                                </Right4thAnd5thLi>
+                                <Right4thAnd5thLi>
+                                    <input type="checkbox"></input>
+                                    <Right4thAnd5thLiLabel>
+                                        Modals
+                                    </Right4thAnd5thLiLabel>
+                                </Right4thAnd5thLi>
+                            </Right4thAnd5thUl>
+                        </Right4thAnd5thUlContainer>
+                        <BottomToolBarContainer>
+                            <BottomToolBarLeft></BottomToolBarLeft>
+                            <BottomToolBarRight></BottomToolBarRight>
+                        </BottomToolBarContainer>
                     </RightBoxCSS>
                 </MainDivCSS>
             </BodyCSS>
@@ -300,6 +378,7 @@ const FarLeftUl = styled.ul`
 const FarLeftLi = styled.li`
     list-style-type: none;
     padding-top: 1rem;
+    font-size: small;
 `;
 
 const PlusButtonContainer = styled.div`
@@ -353,6 +432,9 @@ const TopRightH1Container = styled.div`
     display: flex;
     font-size: large;
     padding-left: 2rem;
+`;
+const TopRightH1 = styled.h1`
+    margin-top: 0;
 `;
 const TopRightMenuContainer = styled.div`
     display: flex;
@@ -423,14 +505,18 @@ const TopRight3rdUl = styled.ul`
     padding: 0;
 `;
 const TopRight3rdLi = styled.li`
+    align-items: center;
+    display: flex;
+    flex-direction: row;
     list-style-type: none;
     margin: 0;
+    padding: 0.3rem;
 `;
-const Right4thContainer = styled.div`
+const Right4thAnd5thContainer = styled.div`
     display: flex;
     flex-direction: column;
 `;
-const RightTitleAndSpreadContainer = styled.div`
+const Right4thAnd5thTitleAndSpreadContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -441,5 +527,56 @@ const RightTitleAndSpreadContainer = styled.div`
     border-color: lightgray;
     border-width: 0.1rem;
 `;
-const Right4thTitleContainer = styled.div``;
-const Right4thSpread = styled.div``;
+const Right4thAnd5thTitleContainer = styled.div``;
+const Right4thAnd5thTitle = styled.h4`
+    margin: 0.5rem 0 0.5rem 0;
+`;
+const Right4thAnd5thSpread = styled.div``;
+const Right4thAnd5thUlContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: flex-start;
+    align-items: flex-start;
+`;
+const Right4thAnd5thUl = styled.ul`
+    margin-left: 2rem;
+    padding: 0;
+    width: 65vw;
+`;
+// There has got to be a better way to do the width here ^
+const Right4thAnd5thLi = styled.li`
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0.3rem;
+    border-radius: 5px;
+    &: hover {
+        background: lightgray;
+    }
+`;
+const Right4thAnd5thLiLabel = styled.span`
+    margin: 0;
+    font-size: small;
+    width: 100%;
+`;
+const BottomToolBarContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+`;
+const BottomToolBarLeft = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+`;
+const BottomToolBarRight = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin-right: 3rem;
+    justify-content: center;
+`;
