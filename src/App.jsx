@@ -216,15 +216,16 @@ const TopBarContainer = styled.div`
 const ProjectsH4 = styled.h4`
     color: ${COLORS.blue};
     padding-left: 2rem;
+    margin: 3rem 0 0 0;
 `;
 const PersonalH4 = styled.h4`
     color: ${COLORS.green};
-    margin: 4rem 0 0 0;
+    margin: 3rem 0 0 0;
     padding-left: 2rem;
 `;
 const LearningH4 = styled.h4`
     color: ${COLORS.red};
-    margin: 4rem 0 0 0;
+    margin: 3rem 0 0 0;
     padding-left: 2rem;
 `;
 const BlueCircleCSS = styled.img`
@@ -237,7 +238,7 @@ const RedCircleCSS = styled.img`
     margin-right: 1rem;
 `;
 const FarLeftUl = styled.ul`
-    padding-left: 2rem;
+    padding-left: 4rem;
     margin: 0;
 `;
 const FarLeftLi = styled.li`
