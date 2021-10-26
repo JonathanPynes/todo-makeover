@@ -22,7 +22,7 @@ function App() {
                 <MainDivCSS>
                     <FarLeftBarCSS>
                         <IconsFarLeftBarCSS>
-                            <div>
+                            <IconsTopContainer>
                                 <IconButton onClick={console.log("clicked")}>
                                     <img src={LogoIcon} alt="home" />
                                 </IconButton>
@@ -41,9 +41,9 @@ function App() {
                                 <IconButton>
                                     <img src={TrashIcon} alt="delete" />
                                 </IconButton>
-                            </div>
+                            </IconsTopContainer>
                             {/* Probably a better way to do the last bit below, would love a css tip... I thought padding-top: auto; would work - but no? */}
-                            <div>
+                            <IconsBottomContainer>
                                 <ProfileButton>
                                     <ProfileImgCSS
                                         src={ProfileImg}
@@ -53,7 +53,7 @@ function App() {
                                 <SpreadIconButton>
                                     <img src={SpreadIcon} alt="menu" />
                                 </SpreadIconButton>
-                            </div>
+                            </IconsBottomContainer>
                         </IconsFarLeftBarCSS>
                     </FarLeftBarCSS>
 
@@ -153,6 +153,17 @@ const IconsFarLeftBarCSS = styled.ul`
     margin: 0;
     padding: 0;
     justify-content: space-between;
+`;
+
+const IconsTopContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
+const IconsBottomContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
 `;
 
 const IconButton = styled.button`
