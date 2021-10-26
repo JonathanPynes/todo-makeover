@@ -58,39 +58,41 @@ function App() {
                     </FarLeftBarCSS>
 
                     <LeftBarCSS>
-                        <div>
-                            <ProjectsH4>
-                                <BlueCircleCSS src={BlueCircle} />
-                                Projects
-                            </ProjectsH4>
-                            <FarLeftUl>
-                                <FarLeftLi>v</FarLeftLi>
-                                <FarLeftLi>v</FarLeftLi>
-                                <FarLeftLi>v</FarLeftLi>
-                            </FarLeftUl>
-                        </div>
-                        <div>
-                            <PersonalH4>
-                                <GreenCircleCSS src={GreenCircle} />
-                                Personal
-                            </PersonalH4>
-                            <FarLeftUl>
-                                <FarLeftLi>v</FarLeftLi>
-                                <FarLeftLi>v</FarLeftLi>
-                                <FarLeftLi>v</FarLeftLi>
-                            </FarLeftUl>
-                        </div>
-                        <div>
-                            <LearningH4>
-                                <RedCircleCSS src={RedCircle} />
-                                Learning
-                            </LearningH4>
-                            <FarLeftUl>
-                                <FarLeftLi>v</FarLeftLi>
-                                <FarLeftLi>v</FarLeftLi>
-                                <FarLeftLi>v</FarLeftLi>
-                            </FarLeftUl>
-                        </div>
+                        <TopBarContainer>
+                            <div>
+                                <ProjectsH4>
+                                    <BlueCircleCSS src={BlueCircle} />
+                                    Projects
+                                </ProjectsH4>
+                                <FarLeftUl>
+                                    <FarLeftLi>v</FarLeftLi>
+                                    <FarLeftLi>v</FarLeftLi>
+                                    <FarLeftLi>v</FarLeftLi>
+                                </FarLeftUl>
+                            </div>
+                            <div>
+                                <PersonalH4>
+                                    <GreenCircleCSS src={GreenCircle} />
+                                    Personal
+                                </PersonalH4>
+                                <FarLeftUl>
+                                    <FarLeftLi>v</FarLeftLi>
+                                    <FarLeftLi>v</FarLeftLi>
+                                    <FarLeftLi>v</FarLeftLi>
+                                </FarLeftUl>
+                            </div>
+                            <div>
+                                <LearningH4>
+                                    <RedCircleCSS src={RedCircle} />
+                                    Learning
+                                </LearningH4>
+                                <FarLeftUl>
+                                    <FarLeftLi>v</FarLeftLi>
+                                    <FarLeftLi>v</FarLeftLi>
+                                    <FarLeftLi>v</FarLeftLi>
+                                </FarLeftUl>
+                            </div>
+                        </TopBarContainer>
                         <PlusButtonContainer>
                             <PlusButtonCSS>
                                 <img src={PlusButton} alt="add" />
@@ -197,6 +199,7 @@ const SpreadIconButton = styled.button`
 const LeftBarCSS = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     position: absolute;
     left: 5vw;
     width: 15vw;
@@ -206,9 +209,12 @@ const LeftBarCSS = styled.div`
     border-color: lightgray;
 `;
 
+const TopBarContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
 const ProjectsH4 = styled.h4`
     color: ${COLORS.blue};
-    margin: 7rem 0 0 0;
     padding-left: 2rem;
 `;
 const PersonalH4 = styled.h4`
@@ -238,12 +244,13 @@ const FarLeftLi = styled.li`
     list-style-type: none;
     padding-top: 1rem;
 `;
+
 const PlusButtonContainer = styled.div`
     display: flex;
-    height: 6.5rem;
+    margin-bottom: 30px;
+    flex-direction: column;
     align-items: center;
     flex-direction: column;
-    justify-content: flex-end;
 `;
 const PlusButtonCSS = styled.button`
     border: none;
