@@ -1,4 +1,5 @@
 //design should look like this https://bashooka.com/wp-content/uploads/2018/11/to-do-app-ui-design-5.jpg
+//https://tender-pike-d60a95.netlify.app
 import TodoList from "./components/TodoList";
 import React, { useState } from "react";
 import { nanoid } from "nanoid";
@@ -633,7 +634,7 @@ const Right4thAnd5thSpread = styled.div``;
 const Right4thAnd5thUlContainer = styled.div`
     display: flex;
     flex-direction: column;
-    height: 80rem;
+    height: inherit;
     overflow-y: scroll;
     ::-webkit-scrollbar {
         display: none;
@@ -684,7 +685,7 @@ const BottomToolBarContainer = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
-    height: 100%;
+    height: 15rem;
     margin-bottom: 30px;
 `;
 const BottomToolBarLeft = styled.div`
