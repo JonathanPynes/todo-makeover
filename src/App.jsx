@@ -1,5 +1,7 @@
 //design should look like this https://bashooka.com/wp-content/uploads/2018/11/to-do-app-ui-design-5.jpg
 import TodoList from "./components/TodoList";
+import React, { useState } from "react";
+import { nanoid } from "nanoid";
 import LogoIcon from "./icons/logo.svg";
 import InboxIcon from "./icons/inbox.svg";
 import StarIcon from "./icons/star_border.svg";
@@ -24,6 +26,33 @@ import OrangePlusCircle from "./icons/orangePlusCircle.svg";
 import BluePlusCircle from "./icons/bluePlusCircle.svg";
 
 function App() {
+    const [todos, setTodo] = useState([
+        {
+            title: "Jon needs to learn jsx",
+            completed: false,
+        },
+        { title: "Jon needs to learn jsx", completed: false },
+    ]);
+    const [todoName, setTodoName] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setTodo([
+            ...todos,
+            {
+                id: nanoid(),
+                title: todoName,
+                completed: false,
+            },
+        ]);
+        setTodoName("");
+    };
+
+    const handleCompleteTodo = (todo, index) => {
+        const copy = [...todos];
+        copy[index].completed = !todo.completed;
+        setTodo(copy);
+    };
     return (
         <>
             <BodyCSS>
@@ -212,44 +241,43 @@ function App() {
                         </Right4thAnd5thContainer>
                         <Right4thAnd5thUlContainer>
                             <Right4thAnd5thUl>
-                                <Right4thAnd5thLi>
-                                    <input type="checkbox"></input>
-                                    <Right4thAnd5thLiLabel>
-                                        Project page
-                                    </Right4thAnd5thLiLabel>
-                                </Right4thAnd5thLi>
-                                <Right4thAnd5thLi>
-                                    <input type="checkbox"></input>
-                                    <Right4thAnd5thLiLabel>
-                                        Today page
-                                    </Right4thAnd5thLiLabel>
-                                </Right4thAnd5thLi>
-                                <Right4thAnd5thLi>
-                                    <input type="checkbox"></input>
-                                    <Right4thAnd5thLiLabel>
-                                        End of day page
-                                    </Right4thAnd5thLiLabel>
-                                </Right4thAnd5thLi>
-                                <Right4thAnd5thLi>
-                                    <input type="checkbox"></input>
-                                    <Right4thAnd5thLiLabel>
-                                        Notifications And Confirmations
-                                    </Right4thAnd5thLiLabel>
-                                </Right4thAnd5thLi>
-                                <Right4thAnd5thLi>
-                                    <input type="checkbox"></input>
-                                    <Right4thAnd5thLiLabel>
-                                        Modals
-                                    </Right4thAnd5thLiLabel>
-                                </Right4thAnd5thLi>
-                                <Right4thAnd5thLi>
-                                    <AddItemButton>
-                                        +
-                                        <AddItemButtonSpan>
-                                            Add item
-                                        </AddItemButtonSpan>
-                                    </AddItemButton>
-                                </Right4thAnd5thLi>
+                                <form onSubmit={handleSubmit}>
+                                    <label>
+                                        <input
+                                            name="item" //what is this? why does the input need a name?
+                                            type="text"
+                                            value={todoName}
+                                            onChange={(e) =>
+                                                setTodoName(e.target.value)
+                                            }
+                                        />
+                                    </label>
+                                </form>
+                                {todos.map((todo, index) => {
+                                    return (
+                                        <Right4thAnd5thLi>
+                                            <input
+                                                type="checkbox"
+                                                onChange={() =>
+                                                    handleCompleteTodo(
+                                                        todo,
+                                                        index
+                                                    )
+                                                }
+                                            ></input>
+                                            <Right4thAnd5thLiLabel
+                                                style={{
+                                                    textDecoration:
+                                                        todo.completed
+                                                            ? "line-through"
+                                                            : "none",
+                                                }}
+                                            >
+                                                {todo.title}
+                                            </Right4thAnd5thLiLabel>
+                                        </Right4thAnd5thLi>
+                                    );
+                                })}
                             </Right4thAnd5thUl>
                         </Right4thAnd5thUlContainer>
                         <BottomToolBarContainer>
