@@ -26,19 +26,27 @@ import OrangePlusCircle from "./icons/orangePlusCircle.svg";
 import BluePlusCircle from "./icons/bluePlusCircle.svg";
 
 function App() {
-    const [todos, setTodo] = useState([
+    const [showInput, setShowInput] = useState(false);
+    const [todoName, setTodoName] = useState("");
+    const [todosDesign, setTodoDesign] = useState([
         {
-            title: "Jon needs to learn jsx",
+            title: "Project page",
             completed: false,
         },
-        { title: "Jon needs to learn jsx", completed: false },
+        { title: "Today page", completed: false, id: nanoid() },
+        { title: "Notifications & Confirmations", completed: false },
+        { title: "Modals", completed: false },
     ]);
-    const [todoName, setTodoName] = useState("");
-
+    // The list above is in the "design list" Should I just make another object to represent Product Planning in the original todos ^?
+    const [todosProductPlanning, setTodoProductPlanning] = useState([
+        { title: "Today page", completed: false, id: nanoid() },
+        { title: "Today page", completed: false, id: nanoid() },
+        { title: "Today page", completed: false, id: nanoid() },
+    ]);
     const handleSubmit = (e) => {
         e.preventDefault();
-        setTodo([
-            ...todos,
+        setTodoDesign([
+            ...todosDesign,
             {
                 id: nanoid(),
                 title: todoName,
@@ -46,12 +54,16 @@ function App() {
             },
         ]);
         setTodoName("");
+        setShowInput((current) => !current);
     };
-
-    const handleCompleteTodo = (todo, index) => {
-        const copy = [...todos];
-        copy[index].completed = !todo.completed;
-        setTodo(copy);
+    const handleCompleteTodo = (todo, id) => {
+        const copy = [...todosDesign];
+        copy[id].completed = !todo.completed;
+        setTodoDesign(copy);
+    };
+    const handleAddButtonClick = () => {
+        setShowInput((current) => !current);
+        console.log(showInput);
     };
     return (
         <>
@@ -207,24 +219,16 @@ function App() {
                         </Right4thAnd5thContainer>
                         <Right4thAnd5thUlContainer>
                             <Right4thAnd5thUl>
-                                <Right4thAnd5thLi>
-                                    <input type="checkbox"></input>
-                                    <Right4thAnd5thLiLabel>
-                                        Decide how to organize Today page
-                                    </Right4thAnd5thLiLabel>
-                                </Right4thAnd5thLi>
-                                <Right4thAnd5thLi>
-                                    <input type="checkbox"></input>
-                                    <Right4thAnd5thLiLabel>
-                                        Create wireFrames for the Today page
-                                    </Right4thAnd5thLiLabel>
-                                </Right4thAnd5thLi>
-                                <Right4thAnd5thLi>
-                                    <input type="checkbox"></input>
-                                    <Right4thAnd5thLiLabel>
-                                        Decide whether to group items by type
-                                    </Right4thAnd5thLiLabel>
-                                </Right4thAnd5thLi>
+                                {todosProductPlanning.map((todo, id) => {
+                                    return (
+                                        <Right4thAnd5thLi>
+                                            <input type="checkbox"></input>
+                                            <Right4thAnd5thLiLabel>
+                                                todosProductPlanning.title
+                                            </Right4thAnd5thLiLabel>
+                                        </Right4thAnd5thLi>
+                                    );
+                                })}
                             </Right4thAnd5thUl>
                         </Right4thAnd5thUlContainer>
                         <Right4thAnd5thContainer>
@@ -241,36 +245,20 @@ function App() {
                         </Right4thAnd5thContainer>
                         <Right4thAnd5thUlContainer>
                             <Right4thAnd5thUl>
-                                <form onSubmit={handleSubmit}>
-                                    <label>
-                                        <input
-                                            name="item" //what is this? why does the input need a name?
-                                            type="text"
-                                            value={todoName}
-                                            onChange={(e) =>
-                                                setTodoName(e.target.value)
-                                            }
-                                        />
-                                    </label>
-                                </form>
-                                {todos.map((todo, index) => {
+                                {todosDesign.map((todo, id) => {
                                     return (
                                         <Right4thAnd5thLi>
                                             <input
                                                 type="checkbox"
                                                 onChange={() =>
-                                                    handleCompleteTodo(
-                                                        todo,
-                                                        index
-                                                    )
+                                                    handleCompleteTodo(todo, id)
                                                 }
                                             ></input>
                                             <Right4thAnd5thLiLabel
                                                 style={{
-                                                    textDecoration:
-                                                        todo.completed
-                                                            ? "line-through"
-                                                            : "none",
+                                                    color: todo.completed
+                                                        ? "gray"
+                                                        : "inherit",
                                                 }}
                                             >
                                                 {todo.title}
@@ -278,6 +266,38 @@ function App() {
                                         </Right4thAnd5thLi>
                                     );
                                 })}
+                                <Right4thAnd5thLi>
+                                    <AddItemButton
+                                        onClick={() => handleAddButtonClick()}
+                                        style={{
+                                            display: showInput
+                                                ? "none"
+                                                : "flex",
+                                        }}
+                                    >
+                                        + Add Item
+                                    </AddItemButton>
+                                    <form
+                                        onSubmit={handleSubmit}
+                                        style={{
+                                            display: showInput
+                                                ? "flex"
+                                                : "none",
+                                        }}
+                                    >
+                                        <label>
+                                            <input
+                                                name="item" //what is this? why does the input need a name?
+                                                type="text"
+                                                placeholder="Add Todo"
+                                                value={todoName}
+                                                onChange={(e) =>
+                                                    setTodoName(e.target.value)
+                                                }
+                                            />
+                                        </label>
+                                    </form>
+                                </Right4thAnd5thLi>
                             </Right4thAnd5thUl>
                         </Right4thAnd5thUlContainer>
                         <BottomToolBarContainer>
@@ -601,7 +621,10 @@ const Right4thAnd5thSpread = styled.div``;
 const Right4thAnd5thUlContainer = styled.div`
     display: flex;
     flex-direction: column;
-    height: auto;
+    height: 80rem;
+    overflow-y: scroll;
+    ::-webkit-scrollbar {
+        display: none;
     justify-content: flex-start;
     align-items: flex-start;
 `;
@@ -635,15 +658,15 @@ const AddItemButton = styled.button`
     background: none;
     padding: 0 6px 0 4.5px;
     border: none;
-    font-size: large;
+    font-size: 0.7rem;
     width: auto;
     color: ${COLORS.blue};
 `;
-const AddItemButtonSpan = styled.span`
-    font-size: 0.7rem;
-    padding-left: 3px;
-    color: ${COLORS.blue};
-`;
+// const AddItemButtonSpan = styled.span`
+//     font-size: 0.7rem;
+//     padding-left: 3px;
+//     color: ${COLORS.blue};
+// `;
 const BottomToolBarContainer = styled.div`
     display: flex;
     flex-direction: row;
