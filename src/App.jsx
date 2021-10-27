@@ -39,9 +39,21 @@ function App() {
     ]);
     // The list above is in the "design list" Should I just make another object to represent Product Planning in the original todos ^?
     const [todosProductPlanning, setTodoProductPlanning] = useState([
-        { title: "Today page", completed: false, id: nanoid() },
-        { title: "Today page", completed: false, id: nanoid() },
-        { title: "Today page", completed: false, id: nanoid() },
+        {
+            title: "Decide how to organize Today page",
+            completed: false,
+            id: nanoid(),
+        },
+        {
+            title: "Create wireframes for the Today page",
+            completed: false,
+            id: nanoid(),
+        },
+        {
+            title: "Decide whether to group items by type",
+            completed: false,
+            id: nanoid(),
+        },
     ]);
     const handleSubmit = (e) => {
         e.preventDefault();
