@@ -16,7 +16,7 @@ import RedCircle from "./icons/redCircle.svg";
 import COLORS from "./Colors";
 import styled from "styled-components";
 import PlusButton from "./icons/plusButton.png";
-import SpreadIconGray from "./icons/spreadGray.svg";
+import SpreadIconGray from "./icons/spreadgray.svg";
 import GreenCheckCircle from "./icons/greenCheckCircle.svg";
 import RedXCircle from "./icons/redXCircle.svg";
 import PurpleCalendarCircle from "./icons/purpleCalendarCircle.svg";
