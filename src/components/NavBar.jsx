@@ -1,11 +1,11 @@
 import LogoIcon from "../icons/logo.svg";
 import InboxIcon from "../icons/inbox.jsx";
 import StarIcon from "../icons/StarIcon.jsx";
-import CalendarIcon from "../icons/calendar_today.svg";
-import CheckedIcon from "../icons/check.svg";
-import TrashIcon from "../icons/delete_outline.svg";
+import CalendarIcon from "../icons/CalendarToday.jsx";
+import CheckedIcon from "../icons/Check.jsx";
+import TrashIcon from "../icons/TrashIcon.jsx";
 import ProfileImg from "../img/profile.jpg";
-import SpreadIcon from "../icons/spread.svg";
+import Spread from "../icons/Spread.jsx";
 import styled from "styled-components";
 import {
     BrowserRouter as Router,
@@ -47,22 +47,52 @@ const NavBar = () => {
                         />
                     </IconButton>
                     <IconButton onClick={() => history.push("/calendar")}>
-                        <img src={CalendarIcon} alt="calendar" />
+                        <CalendarIcon
+                            color={
+                                location.pathname === "/calendar"
+                                    ? "white"
+                                    : "lightgray"
+                            }
+                        />
                     </IconButton>
                     <IconButton onClick={() => history.push("/checked")}>
-                        <img src={CheckedIcon} alt="check" />
+                        <CheckedIcon
+                            color={
+                                location.pathname === "/checked"
+                                    ? "white"
+                                    : "lightgray"
+                            }
+                        />
                     </IconButton>
                     <IconButton onClick={() => history.push("/trash")}>
-                        <img src={TrashIcon} alt="delete" />
+                        <TrashIcon
+                            color={
+                                location.pathname === "/trash"
+                                    ? "white"
+                                    : "lightgray"
+                            }
+                        />
                     </IconButton>
                 </IconsTopContainer>
                 {/* Probably a better way to do the last bit below, would love a css tip... I thought padding-top: auto; would work - but no? */}
                 <IconsBottomContainer>
                     <ProfileButton>
-                        <ProfileImgCSS src={ProfileImg} alt="profile" />
+                        <ProfileImgCSS
+                            src={ProfileImg}
+                            alt="profile"
+                            onClick={() => history.push("/profile")}
+                        />
                     </ProfileButton>
-                    <SpreadIconButton>
-                        <img src={SpreadIcon} alt="menu" />
+                    <SpreadIconButton
+                        onClick={() => history.push("/spreadnav")}
+                    >
+                        <Spread
+                            color={
+                                location.pathname === "/spreadnav"
+                                    ? "white"
+                                    : "lightgray"
+                            }
+                        />
                     </SpreadIconButton>
                 </IconsBottomContainer>
             </IconsFarLeftBarCSS>
