@@ -3,6 +3,9 @@ import COLORS from "../Colors";
 import { nanoid } from "nanoid";
 import React, { useState } from "react";
 import SpreadIconGray from "../icons/SpreadIconGray.jsx";
+import NotesMeme from "../img/Meme.jpg";
+import LinksMeme from "../img/Links.jpg";
+import RickMeme from "../img/Rick-and-Morty-Memes.jpg";
 import {
     BrowserRouter as Router,
     Switch,
@@ -79,157 +82,180 @@ const TodosTab = () => {
             <TopRight2ndContainer>
                 <TopRight2ndTabsContainer>
                     <TopRight2ndTabsTodos
-                        onClick={() => history.push("/todosTab")}
+                        onClick={() => history.push("/home/todosTab")}
                     >
                         <TopRight2ndTabsButton>10</TopRight2ndTabsButton>
                         Todos
                     </TopRight2ndTabsTodos>
-
-                    <TopRight2ndTabs>
+                    <TopRight2ndTabsNotes
+                        onClick={() => history.push("/home/notes")}
+                    >
                         <TopRight2ndTabsButton>5</TopRight2ndTabsButton>
                         Notes
-                    </TopRight2ndTabs>
-                    <TopRight2ndTabs>
+                    </TopRight2ndTabsNotes>
+                    <TopRight2ndTabs
+                        onClick={() => history.push("/home/links")}
+                    >
                         <TopRight2ndTabsButton></TopRight2ndTabsButton>
                         Links
                     </TopRight2ndTabs>
-                    <TopRight2ndTabs>
+                    <TopRight2ndTabs
+                        onClick={() => history.push("/home/files")}
+                    >
                         <TopRight2ndTabsButton></TopRight2ndTabsButton>
                         Files
                     </TopRight2ndTabs>
                 </TopRight2ndTabsContainer>
             </TopRight2ndContainer>
-            <Switch>
-                <Route path="/todosTab">
-                    {/* ------------------ */}
-                    <TopRight3rdContainer>
-                        <TopRight3rdUl>
-                            <TopRight3rdLi>
-                                <input type="checkbox"></input>
-                                <Right4thAnd5thLiLabel>
-                                    Project page
-                                </Right4thAnd5thLiLabel>
-                            </TopRight3rdLi>
-                            <TopRight3rdLi>
-                                <input type="checkbox"></input>
-                                <Right4thAnd5thLiLabel>
-                                    Today page
-                                </Right4thAnd5thLiLabel>
-                            </TopRight3rdLi>
-                        </TopRight3rdUl>
-                    </TopRight3rdContainer>
-                    <Right4thAnd5thContainer>
-                        <Right4thAnd5thTitleAndSpreadContainer>
-                            <Right4thAnd5thTitleContainer>
-                                <Right4thAnd5thTitle>
-                                    Product Planning
-                                </Right4thAnd5thTitle>
-                            </Right4thAnd5thTitleContainer>
-                            <Right4thAnd5thSpread>
-                                <img src={SpreadIconGray} alt="more" />
-                            </Right4thAnd5thSpread>
-                        </Right4thAnd5thTitleAndSpreadContainer>
-                    </Right4thAnd5thContainer>
-                    <Right4thAnd5thUlContainer>
-                        <Right4thAnd5thUl>
-                            {todosProductPlanning.map((todo, id) => {
-                                return (
-                                    <Right4thAnd5thLi>
-                                        <input
-                                            type="checkbox"
-                                            onChange={() =>
-                                                handleCompletedTodoProduct(
-                                                    todo,
-                                                    id
-                                                )
-                                            }
-                                        ></input>
-                                        <Right4thAnd5thLiLabel
-                                            style={{
-                                                color: todo.completed
-                                                    ? "gray"
-                                                    : "black",
-                                            }}
-                                        >
-                                            {todo.title}
-                                        </Right4thAnd5thLiLabel>
-                                    </Right4thAnd5thLi>
-                                );
-                            })}
-                        </Right4thAnd5thUl>
-                    </Right4thAnd5thUlContainer>
-                    <Right4thAnd5thContainer>
-                        <Right4thAnd5thTitleAndSpreadContainer>
-                            <Right4thAnd5thTitleContainer>
-                                <Right4thAnd5thTitle>
-                                    Design
-                                </Right4thAnd5thTitle>
-                            </Right4thAnd5thTitleContainer>
-                            <Right4thAnd5thSpread>
-                                <SpreadIconGray />
-                            </Right4thAnd5thSpread>
-                        </Right4thAnd5thTitleAndSpreadContainer>
-                    </Right4thAnd5thContainer>
-                    <Right4thAnd5thUlContainer>
-                        <Right4thAnd5thUl>
-                            {todosDesign.map((todo, id) => {
-                                return (
-                                    <Right4thAnd5thLi>
-                                        <input
-                                            type="checkbox"
-                                            onChange={() =>
-                                                handleCompleteTodo(todo, id)
-                                            }
-                                        ></input>
-                                        <Right4thAnd5thLiLabel
-                                            style={{
-                                                color: todo.completed
-                                                    ? "gray"
-                                                    : "black",
-                                            }}
-                                        >
-                                            {todo.title}
-                                        </Right4thAnd5thLiLabel>
-                                    </Right4thAnd5thLi>
-                                );
-                            })}
-                            <Right4thAnd5thLi>
-                                <AddItemButton
-                                    onClick={() => handleAddButtonClick()}
-                                    style={{
-                                        display: showInput ? "none" : "flex",
-                                    }}
-                                >
-                                    + Add Item
-                                </AddItemButton>
-                                <form
-                                    onSubmit={handleSubmit}
-                                    style={{
-                                        display: showInput ? "flex" : "none",
-                                    }}
-                                >
-                                    <label>
-                                        <input
-                                            name="item" //what is this? why does the input need a name?
-                                            type="text"
-                                            placeholder="Add Todo"
-                                            value={todoName}
-                                            onChange={(e) =>
-                                                setTodoName(e.target.value)
-                                            }
-                                        />
-                                    </label>
-                                </form>
-                            </Right4thAnd5thLi>
-                        </Right4thAnd5thUl>
-                    </Right4thAnd5thUlContainer>
-                </Route>
-            </Switch>
+            <Route path="/home/todosTab">
+                <TopRight3rdContainer>
+                    <TopRight3rdUl>
+                        <TopRight3rdLi>
+                            <input type="checkbox"></input>
+                            <Right4thAnd5thLiLabel>
+                                Project page
+                            </Right4thAnd5thLiLabel>
+                        </TopRight3rdLi>
+                        <TopRight3rdLi>
+                            <input type="checkbox"></input>
+                            <Right4thAnd5thLiLabel>
+                                Today page
+                            </Right4thAnd5thLiLabel>
+                        </TopRight3rdLi>
+                    </TopRight3rdUl>
+                </TopRight3rdContainer>
+                <Right4thAnd5thContainer>
+                    <Right4thAnd5thTitleAndSpreadContainer>
+                        <Right4thAnd5thTitleContainer>
+                            <Right4thAnd5thTitle>
+                                Product Planning
+                            </Right4thAnd5thTitle>
+                        </Right4thAnd5thTitleContainer>
+                        <Right4thAnd5thSpread>
+                            <SpreadIconGray />
+                        </Right4thAnd5thSpread>
+                    </Right4thAnd5thTitleAndSpreadContainer>
+                </Right4thAnd5thContainer>
+                <Right4thAnd5thUlContainer>
+                    <Right4thAnd5thUl>
+                        {todosProductPlanning.map((todo, id) => {
+                            return (
+                                <Right4thAnd5thLi>
+                                    <input
+                                        type="checkbox"
+                                        onChange={() =>
+                                            handleCompletedTodoProduct(todo, id)
+                                        }
+                                    ></input>
+                                    <Right4thAnd5thLiLabel
+                                        style={{
+                                            color: todo.completed
+                                                ? "gray"
+                                                : "black",
+                                        }}
+                                    >
+                                        {todo.title}
+                                    </Right4thAnd5thLiLabel>
+                                </Right4thAnd5thLi>
+                            );
+                        })}
+                    </Right4thAnd5thUl>
+                </Right4thAnd5thUlContainer>
+                <Right4thAnd5thContainer>
+                    <Right4thAnd5thTitleAndSpreadContainer>
+                        <Right4thAnd5thTitleContainer>
+                            <Right4thAnd5thTitle>Design</Right4thAnd5thTitle>
+                        </Right4thAnd5thTitleContainer>
+                        <Right4thAnd5thSpread>
+                            <SpreadIconGray />
+                        </Right4thAnd5thSpread>
+                    </Right4thAnd5thTitleAndSpreadContainer>
+                </Right4thAnd5thContainer>
+                <Right4thAnd5thUlContainer>
+                    <Right4thAnd5thUl>
+                        {todosDesign.map((todo, id) => {
+                            return (
+                                <Right4thAnd5thLi>
+                                    <input
+                                        type="checkbox"
+                                        onChange={() =>
+                                            handleCompleteTodo(todo, id)
+                                        }
+                                    ></input>
+                                    <Right4thAnd5thLiLabel
+                                        style={{
+                                            color: todo.completed
+                                                ? "gray"
+                                                : "black",
+                                        }}
+                                    >
+                                        {todo.title}
+                                    </Right4thAnd5thLiLabel>
+                                </Right4thAnd5thLi>
+                            );
+                        })}
+                        <Right4thAnd5thLi>
+                            <AddItemButton
+                                onClick={() => handleAddButtonClick()}
+                                style={{
+                                    display: showInput ? "none" : "flex",
+                                }}
+                            >
+                                + Add Item
+                            </AddItemButton>
+                            <form
+                                onSubmit={handleSubmit}
+                                style={{
+                                    display: showInput ? "flex" : "none",
+                                }}
+                            >
+                                <label>
+                                    <input
+                                        name="item" //what is this? why does the input need a name?
+                                        type="text"
+                                        placeholder="Add Todo"
+                                        value={todoName}
+                                        onChange={(e) =>
+                                            setTodoName(e.target.value)
+                                        }
+                                    />
+                                </label>
+                            </form>
+                        </Right4thAnd5thLi>
+                    </Right4thAnd5thUl>
+                </Right4thAnd5thUlContainer>
+            </Route>
+            <Route path="/home/notes">
+                <MemesContainer>
+                    <MemesCSS src={NotesMeme} alt="" />
+                </MemesContainer>
+            </Route>
+            <Route path="/home/links">
+                <MemesContainer>
+                    <MemesCSS src={LinksMeme} alt="" />
+                </MemesContainer>
+            </Route>
+            <Route path="/home/files">
+                <MemesContainer>
+                    <MemesCSS src={RickMeme} alt="" />
+                </MemesContainer>
+            </Route>
         </>
     );
 };
 export default withRouter(TodosTab);
-
+const MemesContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+`;
+const MemesCSS = styled.img`
+    object-fit: contain;
+    max-width: 30rem;
+    max-height: 30rem;
+`;
 const TopRight3rdContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -357,6 +383,25 @@ const TopRight2ndTabs = styled.button`
     }
 `;
 const TopRight2ndTabsTodos = styled.button`
+    justify-content: space-between;
+    padding: 0;
+    display: flex;
+    margin-right: 2rem;
+    width: 4rem;
+    height: 2rem;
+    border-style: none;
+    background: none;
+    &:hover {
+        cursor: pointer;
+    }
+    &:focus {
+        transition: 0.1s;
+        border-bottom: solid;
+        border-width: 0.15rem;
+        border-color: ${COLORS.blue};
+    }
+`;
+const TopRight2ndTabsNotes = styled.button`
     justify-content: space-between;
     padding: 0;
     display: flex;

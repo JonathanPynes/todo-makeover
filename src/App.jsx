@@ -104,7 +104,6 @@ function App() {
                                         </TopRightMenuButtons>
                                     </TopRightMenuContainer>
                                 </TopRightBoxContainer>
-                                {/* ------------------ */}
                                 <Tabs />
                                 <BottomToolBarContainer>
                                     <BottomToolBarLeft>
