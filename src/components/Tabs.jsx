@@ -80,8 +80,9 @@ const TodosTab = () => {
             "https://my-json-server.typicode.com/typicode/demo/posts"
         );
         const data = await response.json();
-        const [item] = data;
+        const [item] = [data];
         setApiTodo(item);
+        console.log(item);
     }, []);
 
     let history = useHistory();
@@ -239,9 +240,11 @@ const TodosTab = () => {
                 <MemesContainer>
                     <MemesCSS src={NotesMeme} alt="" />
                     {apiTodo && (
-                        <div>
-                            {["Title: ", apiTodo.title, "ID: ", apiTodo.id]}
-                        </div>
+                        <ul>
+                            {apiTodo.map((items) => (
+                                <li key={items.id}>{items.title}</li>
+                            ))}
+                        </ul>
                     )}
                 </MemesContainer>
             </Route>
