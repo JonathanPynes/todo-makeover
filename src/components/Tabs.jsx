@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import COLORS from "../Colors";
 import { nanoid } from "nanoid";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SpreadIconGray from "../icons/SpreadIconGray.jsx";
 import NotesMeme from "../img/Meme.jpg";
 import LinksMeme from "../img/Links.jpg";
@@ -17,6 +17,7 @@ import {
 } from "react-router-dom";
 
 const TodosTab = () => {
+    const [apiTodo, setApiTodo] = useState([]);
     const [showInput, setShowInput] = useState(false);
     const [todoName, setTodoName] = useState("");
     const [todosDesign, setTodoDesign] = useState([
@@ -73,6 +74,15 @@ const TodosTab = () => {
         setShowInput((current) => !current);
         console.log(showInput);
     };
+
+    useEffect(async () => {
+        const response = await fetch(
+            "https://my-json-server.typicode.com/typicode/demo/posts"
+        );
+        const data = await response.json();
+        const [item] = data;
+        setApiTodo(item);
+    }, []);
 
     let history = useHistory();
     let location = useLocation();
@@ -228,6 +238,11 @@ const TodosTab = () => {
             <Route path="/home/notes">
                 <MemesContainer>
                     <MemesCSS src={NotesMeme} alt="" />
+                    {apiTodo && (
+                        <div>
+                            {["Title: ", apiTodo.title, "ID: ", apiTodo.id]}
+                        </div>
+                    )}
                 </MemesContainer>
             </Route>
             <Route path="/home/links">
